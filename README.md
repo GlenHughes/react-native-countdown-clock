@@ -1,6 +1,6 @@
 # React Native Countdown Clock
 
-** PLEASE NOTE THIS WAS A TEST AND IS NOT FINISHED AND REQUIRES MORE WORK TO COMPLETE, FEEL FREE TO CONTRIBUTE! **
+** PLEASE NOTE THIS WAS A TEST AND IS NOT FINISHED AND REQUIRES MORE WORK TO COMPLETE, FEEL FREE TO CONTRIBUTE! THE NEXT STEP IS TO FIX THE WAY THE CANVAS IS BEING INTERACTED WITH**
 
 A HTML 5 canvas countdown clock as a React Native component.
 
@@ -19,13 +19,27 @@ npm install react-native-countdown-clock --save
 ```
 
 ## Usage
+```javascript
+import CountdownClock from 'react-native-countdown-clock'
+```
+
 
 ```javascript
-<ReactCountdownClock seconds={60}
-                     color="#000"
-                     alpha={0.9}
-                     size={300}
-                     onComplete={myCallback} />
+<CountdownClock
+    seconds={60}
+    color="#000"
+    alpha={0.9}
+    size={300}
+    onComplete={function() {return 'complete'}}
+    timeFormat={'s'}
+    fontSize={'auto'}
+    font={'Arial'}
+    showMilliseconds={true}
+    paused={false}
+    onClick={function () {return 'clicked'}}
+    pausedText={'Continue'}
+    weight={200}
+/>
 ```
 
 ## Props

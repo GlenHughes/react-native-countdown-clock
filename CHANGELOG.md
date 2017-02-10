@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.9
+    Updated readme
+
 ## 1.0.8
     Added web view to try and load canvas into view (not currently working)
 
