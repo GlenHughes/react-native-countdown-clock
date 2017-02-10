@@ -1,71 +1,10 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "react-native-countdown-clock",
-        "scope": null,
-        "escapedName": "react-native-countdown-clock",
-        "name": "react-native-countdown-clock",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
-      },
-      "C:\\xampp\\htdocs\\thegymbuddy"
-    ]
-  ],
-  "_from": "react-native-countdown-clock@latest",
-  "_id": "react-native-countdown-clock@1.0.5",
-  "_inCache": true,
-  "_location": "/react-native-countdown-clock",
-  "_nodeVersion": "7.4.0",
-  "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/react-native-countdown-clock-1.0.5.tgz_1486660651970_0.2092529523652047"
-  },
-  "_npmUser": {
-    "name": "glenhughes",
-    "email": "glen.866@gmail.com"
-  },
-  "_npmVersion": "4.0.5",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "react-native-countdown-clock",
-    "scope": null,
-    "escapedName": "react-native-countdown-clock",
-    "name": "react-native-countdown-clock",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/react-native-countdown-clock/-/react-native-countdown-clock-1.0.5.tgz",
-  "_shasum": "30ff31dac44dcc73db510424c4cb9774240a327f",
-  "_shrinkwrap": null,
-  "_spec": "react-native-countdown-clock",
-  "_where": "C:\\xampp\\htdocs\\thegymbuddy",
-  "author": {
-    "name": "Glen Hughes",
-    "email": "glen.866@gmail.com",
-    "url": "http://www.glenhughes.me"
-  },
+  "name": "react-native-countdown-clock",
+  "version": "1.0.7",
+  "description": "React Native countdown clock",
   "bugs": {
     "url": "https://github.com/GlenHughes/react-native-countdown-clock/issues"
   },
-  "dependencies": {
-    "react-native": "0.38.0"
-  },
-  "description": "HTML5 canvas countdown clock React Native component",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "shasum": "30ff31dac44dcc73db510424c4cb9774240a327f",
-    "tarball": "https://registry.npmjs.org/react-native-countdown-clock/-/react-native-countdown-clock-1.0.5.tgz"
-  },
-  "gitHead": "d79204de33861494605ed4e482a481d9006c4f2e",
-  "homepage": "https://github.com/GlenHughes/react-native-countdown-clock",
   "keywords": [
     "react-native-component",
     "react-native",
@@ -73,22 +12,24 @@
     "timer",
     "canvas"
   ],
-  "license": "ISC",
-  "main": "build/react-countdown-clock.js",
   "maintainers": [
     {
       "name": "glenhughes",
       "email": "glen.866@gmail.com"
     }
   ],
-  "name": "react-native-countdown-clock",
-  "optionalDependencies": {},
-  "peerDependencies": {},
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GlenHughes/react-native-countdown-clock.git"
+  "repository": "https://github.com/GlenHughes/react-native-countdown-clock.git",
+  "homepage": "http://glenhughes.me",
+  "author": "Glen Hughes <glen.866@gmail.com>",
+  "dependencies": {
+    "react-native": "0.38.0"
   },
-  "scripts": {},
-  "version": "1.0.6"
+  "main": "index",
+  "engines": {
+    "node": ">= 0.4.1"
+  },
+  "scripts": {
+    "prepublish": "npm prune",
+    "test": "make lint && make test"
+  }
 }
