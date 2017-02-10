@@ -1,5 +1,7 @@
 # React Native Countdown Clock
 
+** PLEASE NOTE THIS WAS A TEST AND IS NOT FINISHED AND REQUIRES MORE WORK TO COMPLETE, FEEL FREE TO CONTRIBUTE! **
+
 A HTML 5 canvas countdown clock as a React Native component.
 
 **FORKED FROM http://pughpugh.github.io/react-countdown-clock/**
