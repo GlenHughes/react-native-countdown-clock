@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.8
+    Added web view to try and load canvas into view (not currently working)
+
+## 1.0.7
+    Updated issue loading module into react native
+
 ## 1.0.6
     Updated readme
 
