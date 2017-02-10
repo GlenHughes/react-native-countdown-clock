@@ -10,23 +10,13 @@
  *
  */
 
-import React from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import React, {PropTypes, Component} from 'react'
+import { StyleSheet, View, Text, TouchableOpacity, WebView } from 'react-native'
 
-type ReactNativeCountdownClockProps = {
-    seconds: React.PropTypes.number
-    size: React.PropTypes.number
-    weight: React.PropTypes.number
-    color: React.PropTypes.string
-    fontSize: React.PropTypes.string
-    font: React.PropTypes.string
-    alpha: React.PropTypes.number
-    timeFormat: React.PropTypes.string
-    onComplete: React.PropTypes.func
-    onClick: React.PropTypes.func
-    showMilliseconds: React.PropTypes.bool
-    paused: React.PropTypes.bool
-    pausedText: React.PropTypes.string
+let ClockStyles = {
+    clock: {
+        "position": "absolute"
+    }
 }
 
 export default class ReactNativeCountdownClock extends React.Component {
@@ -50,7 +40,21 @@ export default class ReactNativeCountdownClock extends React.Component {
         paused: false
     }
 
-    props: ReactNativeCountdownClockProps
+    PropTypes: {
+        seconds: React.PropTypes.number,
+        size: React.PropTypes.number,
+        weight: React.PropTypes.number,
+        color: React.PropTypes.string,
+        fontSize: React.PropTypes.string,
+        font: React.PropTypes.string,
+        alpha: React.PropTypes.number,
+        timeFormat: React.PropTypes.string,
+        onComplete: React.PropTypes.func,
+        onClick: React.PropTypes.func,
+        showMilliseconds: React.PropTypes.bool,
+        paused: React.PropTypes.bool,
+        pausedText: React.PropTypes.string
+    }
 
     getDefaultProps() {
         return this.defaultProps;
@@ -271,9 +275,6 @@ export default class ReactNativeCountdownClock extends React.Component {
     }
 
     render() {
-        return "<div ref='component' className=\"react-native-countdown-clock\">"+
-            "<canvas ref='background' style={ position: 'absolute' } width={this.props.size} height={this.props.size}></canvas>"+
-            "<canvas ref='timer' style={ position: 'absolute' } width={this.props.size} height={this.props.size}></canvas>"+
-        "</div>";
+        return <WebView source={{uri: './assets/html/clock.html'}} style={{marginTop: 20}} />
     }
 }
