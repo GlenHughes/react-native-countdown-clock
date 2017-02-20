@@ -9,8 +9,7 @@ import {
     ScrollView,
     Text,
     TextInput,
-    Dimensions,
-    Vibration
+    Dimensions
 } from 'react-native'
 
 // Styles
@@ -47,11 +46,6 @@ const Styles = {
     },
     infoText: {
         padding: 15
-    },
-    timesUpStyles: {
-        color: '#34a53d',
-        fontSize: 25,
-        padding: 15
     }
 };
 
@@ -59,9 +53,9 @@ export default class CountdownTimer extends React.Component {
     static get defaultProps() {
         return{
             invalidTimeError: 'Please set a time to begin a countdown',
-            timesUpMessage: 'Times Up!',
+            countdownCompleteMessage: 'Times up!',
             vibrateOnComplete: true,
-            infoText: 'Some helpful info',
+            infoText: 'Some helpful info text',
             startButtonTitle: 'Start',
             startButtonColor: '#25b31d',
             startButtonLabel: 'Press to start',
@@ -79,7 +73,6 @@ export default class CountdownTimer extends React.Component {
         this.state = {
             seconds: '',
             timer: null,
-            timesUp: false,
             startButton: true,
             pauseButton: false,
             resetButton: true
@@ -96,12 +89,11 @@ export default class CountdownTimer extends React.Component {
         let _this = this;
         if (this.state.seconds <= '0' || !this.state.seconds) {
             this.setState({
-                errorMessage: 'Please set a time to begin a countdown'
+                errorMessage: this.props.invalidTimeError
             });
         } else {
             this.setState({
-                pauseButton: true,
-                timesUp: false
+                pauseButton: true
             }, () => {
                 _this.renderCountdown();
             });
@@ -123,8 +115,7 @@ export default class CountdownTimer extends React.Component {
         let _this = this;
         this.setState({
             seconds: '',
-            pauseButton: false,
-            timesUp: false
+            pauseButton: false
         }, () => {
             clearInterval(_this.state.timer);
         });
@@ -169,22 +160,12 @@ export default class CountdownTimer extends React.Component {
             if (duration <= 1) {
                 _this.setState({
                     seconds: '',
-                    timer: null,
-                    timesUp: true
+                    timer: null
                 }, () => {
                     clearInterval(timer);
                 });
             }
         }, interval);
-    }
-
-    timeUp() {
-        if (this.props.vibrateOnComplete === true) {
-            Vibration.vibrate();
-            this.setState({
-                timesUp: true
-            })
-        }
     }
 
     renderError() {
@@ -194,11 +175,9 @@ export default class CountdownTimer extends React.Component {
         }
 
         return (
-            <View style={Styles.container}>
-                <Text style={Styles.errorMessage}>
-                    {errorMessage}
-                </Text>
-            </View>
+            <Text style={Styles.errorMessage}>
+                {errorMessage}
+            </Text>
         )
     }
 
@@ -208,43 +187,28 @@ export default class CountdownTimer extends React.Component {
         }
     }
 
-    showTimesUp() {
-        if (this.state.timesUp === true) {
-            return (
-                <View style={Styles.container}>
-                    <Text style={Styles.timesUpStyles}>{this.props.timesUpMessage}</Text>
-                </View>
-            )
-        } else {
-            return null;
-        }
-    }
-
     render () {
         return (
             <View style={Styles.mainContainer}>
-                <ScrollView
-                    style={Styles.container}
-                    keyboardDismissMode='on-drag'
-                    keyboardShouldPersistTaps={true}>
+                <ScrollView style={Styles.container}>
                     <View style={[Styles.section, Styles.infoText]}>
                         <Text>{this.props.infoText}</Text>
                     </View>
-                    {this.renderError()}
-                    {this.showTimesUp()}
+                    <View style={Styles.container}>
+                        {this.renderError()}
+                    </View>
                     <View style={Styles.rowContainer}>
                         <TextInput
                             style={Styles.timeInput}
                             keyboardType='numeric'
                             placeholder='0'
-                            maxLength={3}
+                            maxLength={5}
                             value={this.state.seconds}
                             onChangeText={(seconds) => {
                                 let errorMessage = (seconds) ? '' : this.state.errorMessage;
                                 this.setState({
                                     seconds: seconds,
-                                    errorMessage: errorMessage,
-                                    timesUp: false
+                                    errorMessage: errorMessage
                                 })
                             }}
                         />

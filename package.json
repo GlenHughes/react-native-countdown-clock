@@ -1,6 +1,6 @@
 {
   "name": "react-native-countdown-clock",
-  "version": "1.0.9",
+  "version": "2.0.0",
   "description": "React Native countdown clock",
   "bugs": {
     "url": "https://github.com/GlenHughes/react-native-countdown-clock/issues"
@@ -9,8 +9,7 @@
     "react-native-component",
     "react-native",
     "countdown",
-    "timer",
-    "canvas"
+    "timer"
   ],
   "maintainers": [
     {
