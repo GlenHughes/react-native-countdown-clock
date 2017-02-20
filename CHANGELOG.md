@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.1
+    Fixed bug with scroll view block first button click
+
 ## 2.0.0
     Complete rewrite from the ground up. No more usage of canvas, just plain JS and CSS.
 

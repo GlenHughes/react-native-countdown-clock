@@ -190,7 +190,10 @@ export default class CountdownTimer extends React.Component {
     render () {
         return (
             <View style={Styles.mainContainer}>
-                <ScrollView style={Styles.container}>
+                <ScrollView
+                    style={Styles.container}
+                    keyboardDismissMode='on-drag'
+                    keyboardShouldPersistTaps={true}>
                     <View style={[Styles.section, Styles.infoText]}>
                         <Text>{this.props.infoText}</Text>
                     </View>
