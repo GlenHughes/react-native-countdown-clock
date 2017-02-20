@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.0
+    Complete rewrite from the ground up. No more usage of canvas, just plain JS and CSS.
+
 ## 1.0.9
     Updated readme
 

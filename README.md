@@ -1,16 +1,8 @@
 # React Native Countdown Clock
 
-** PLEASE NOTE THIS WAS A TEST AND IS NOT FINISHED AND REQUIRES MORE WORK TO COMPLETE, FEEL FREE TO CONTRIBUTE! THE NEXT STEP IS TO FIX THE WAY THE CANVAS IS BEING INTERACTED WITH**
+![Screenshot](http://glenhughes.me/projects/react-native-countdown-clock/countdown-timer.png)
 
-A HTML 5 canvas countdown clock as a React Native component.
-
-**FORKED FROM http://pughpugh.github.io/react-countdown-clock/**
-
-![Screenshot](http://pughpugh.github.io/react-countdown-clock/screenshot.png?=0)
-
-## Demo
-
-[pughpugh.github.io/react-countdown-clock](http://pughpugh.github.io/react-countdown-clock)
+A basic React Native countdown clock written in pure ECMA 6 JavaScript and CSS. Please feel free to customise and use as you please.
 
 ## Installation
 
@@ -25,39 +17,22 @@ import CountdownClock from 'react-native-countdown-clock'
 
 
 ```javascript
-<CountdownClock
-    seconds={60}
-    color="#000"
-    alpha={0.9}
-    size={300}
-    onComplete={function() {return 'complete'}}
-    timeFormat={'s'}
-    fontSize={'auto'}
-    font={'Arial'}
-    showMilliseconds={true}
-    paused={false}
-    onClick={function () {return 'clicked'}}
-    pausedText={'Continue'}
-    weight={200}
+<CountdownTimer 
+    invalidTimeError="Please set a time to begin a countdown"
+    countdownCompleteMessage="Times up!"
+    vibrateOnComplete="true"
+    infoText="Some helpful info text displayed above the time input"
+    startButtonTitle="Start"
+    startButtonColor="#25b31d"
+    startButtonLabel="Press to start"
+    pauseButtonTitle="Pause"
+    pauseButtonColor="#ada2a2"
+    pauseButtonLabel="Press to pause"
+    resetButtonTitle="Reset"
+    resetButtonColor="#ff0101"
+    resetButtonLabel="Press to reset"
 />
 ```
-
-## Props
-
-| prop             | type           | default | description                                               |
-|------------------|----------------|---------|-----------------------------------------------------------|
-| seconds          | integer        | 60      | Seconds to countdown                                      |
-| color            | string         | #000    | Colour of counter                                         |
-| alpha            | float          | 1.0     | Alpha transparency of counter                             |
-| size             | integer        | 300     | Width & height of canvas element                          |
-| weight           | integer        |         | Weight of circle, in pixels                               |
-| fontSize         | integer/string | auto    | px size of font. `auto` for dynamic sizing.               |
-| font             | string         | Arial   | Font of counter                                           |
-| timeFormat       | string         | seconds | Counter style; `seconds` or `hms`                         |
-| showMilliseconds | boolean        | true    | Show milliseconds for last 10 seconds                     |
-| onComplete       | func           |         | Callback when time completes                              |
-| paused           | boolean        | false   | Pause countdown of the timer                              |
-| pausedText       | string         |         | Text to display when paused, defaults to the current time |
 
 ## Bugs & Contributions
 
