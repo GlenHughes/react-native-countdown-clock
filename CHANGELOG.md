@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.2
+    Fixed bug in dependency name collision
+
 ## 2.0.1
     Fixed bug with scroll view block first button click
 

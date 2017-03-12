@@ -1,6 +1,6 @@
 {
   "name": "react-native-countdown-clock",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "React Native countdown clock",
   "bugs": {
     "url": "https://github.com/GlenHughes/react-native-countdown-clock/issues"
@@ -21,7 +21,7 @@
   "homepage": "http://glenhughes.me",
   "author": "Glen Hughes <glen.866@gmail.com>",
   "dependencies": {
-    
+
   },
   "main": "index",
   "engines": {
