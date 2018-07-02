@@ -17,7 +17,7 @@ import CountdownClock from 'react-native-countdown-clock'
 
 
 ```javascript
-<CountdownTimer 
+<CountdownClock 
     invalidTimeError="Please set a time to begin a countdown"
     countdownCompleteMessage="Times up!"
     vibrateOnComplete="true"
